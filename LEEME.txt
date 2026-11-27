@@ -1,0 +1,19 @@
+INSTRUCCIONES DE USO - LACIA PUNTOCOM
+======================================
+1. Descomprime este archivo ZIP en una carpeta.
+2. Copia tus fotografías (.webp) dentro de las subcarpetas de 'images/' respetando los nombres exactos que ya configuraste en index.html:
+   - images/mousepads/mousepad-redondo-gel.webp
+   - images/mousepads/mousepads-anime-graficos.webp
+   - images/mousepads/mousepad-var.webp
+   - images/portada/portada-rosa.webp
+   - images/portada/mousepad-avatar.webp
+   - images/stickers/sticker-calabaza-halloween.webp
+   - images/stickers/stickers-personajes-variados.webp
+   - images/medallas/medallas-trofeos.webp
+   - images/estampado-textil/estampado-variado.webp
+   - images/estampado-textil/tulas-deportivas.webp
+   - images/distintivos/mug-lacia.webp
+   - images/placas-trofeos/trofeos.webp
+   - images/cintas-carne/cintas-variadas.webp
+   - images/cintas-carne/cinta-lacia.webp
+3. Abre 'index.html' con Google Chrome para visualizar tu página con los carruseles funcionando.

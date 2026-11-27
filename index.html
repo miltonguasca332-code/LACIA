@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#252525">
+  <meta name="description" content="LaciaPuntocom: impresión, estampado y productos personalizados para marcas, empresas, eventos y proyectos en Bogotá.">
+  <title>Lacia Puntocom | Tus ideas, impresas a tu manera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Refuerzo de estilos de carrusel para garantizar funcionamiento */
+    .carousel { position: relative; overflow: hidden; }
+    .carousel-track { position: relative; width: 100%; height: 100%; }
+    .carousel-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.45s ease;
+      pointer-events: none;
+    }
+    .carousel-slide.is-active {
+      position: relative;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 34px;
+      height: 34px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(37, 37, 37, 0.75);
+      color: #fff;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .carousel-btn:hover { background: #f26522; transform: translateY(-50%) scale(1.08); }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    .gallery-carousel-wrap { position: relative; }
+    .gallery-track {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+    .gallery-track::-webkit-scrollbar { display: none; }
+    .gallery-track .gallery-item { flex: 0 0 calc(33.333% - 0.85rem); min-width: 270px; height: 300px; }
+    .gallery-track .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="top-strip"><span>Ideas, impresión y personalización</span><a href="#cotizar">Cuéntanos qué quieres crear <span aria-hidden="true">↗</span></a></div>
+
+  <header class="site-header" id="arriba">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" data-vista-solo="inicio" aria-label="LaciaPuntocom, inicio">
+	<img class="brand-logo" src="images/portada/logo-transparente.webp" alt="Lacia Puntocom" style="height: 44px; width: auto; object-fit: contain;">
+        <span class="brand-name">LACIAPUNTOCOM<small>IMPRESIÓN Y ESTAMPADO DIGITAL</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="navLinks" aria-expanded="false"><span></span><span></span></button>
+	<nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+        <a href="#inicio" data-vista-solo="inicio">Inicio</a>
+        <a href="#catalogo" data-vista-solo="catalogo">Catálogo</a>
+        <a href="#nosotros" data-vista-solo="nosotros">Sobre nosotros</a>
+        <a href="#instalaciones" data-vista-solo="instalaciones">Instalaciones</a>
+        <a href="#galeria" data-vista-solo="galeria">Galería</a>
+        <a href="#contacto" data-vista-solo="contacto">Contacto</a>
+        <a class="nav-cta" href="#cotizar" data-vista-solo="cotizar">Cotizar <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero section-anchor" id="inicio">
+      <div class="hero-shape shape-one" aria-hidden="true"></div><div class="hero-shape shape-two" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow"><span class="eyebrow-line"></span> IMPRESIÓN · PERSONALIZACIÓN · IDEAS</span>
+          <h1>Tus ideas,<br><em>impresas a tu manera.</em></h1>
+          <p>Convertimos tus ideas en productos personalizados para marcas, empresas, eventos y proyectos. Cuéntanos qué tienes en mente y encontremos juntos la mejor forma de hacerlo realidad.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#catalogo">Explorar catálogo <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="https://wa.me/573162854493?text=Hola%20Lacia%20Puntocom%2C%20quiero%20cotizar%20un%20producto." target="_blank" rel="noopener noreferrer">Cotizar por WhatsApp <span aria-hidden="true">↗</span></a></div>
+          <div class="hero-footnote"><span class="pulse-dot"></span> Tu idea es el comienzo de algo único.</div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="hero-photo-frame carousel" data-autoplay="4000">
+            <div class="carousel-track">
+              <img class="carousel-slide is-active" src="images/portada/portada-rosa.webp" alt="Productos personalizados Lacia Puntocom">
+              <img class="carousel-slide" src="images/portada/mousepad-avatar.webp" alt="Estampados Lacia Puntocom">
+            </div>
+            <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+            <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+            <div class="hero-photo-label"><span>HECHO A PARTIR DE TU IDEA</span><b>Lacia Puntocom</b></div>
+          </div>
+          <div class="hero-side-note"><span class="note-star">✳</span><span>CREA<br>PERSONALIZA<br>COMPARTE</span></div>
+          <div class="hero-orbit" aria-hidden="true">✳</div>
+        </div>
+      </div>
+      <div class="hero-bottom-line"><span>PARA MARCAS</span><i></i><span>PARA EVENTOS</span><i></i><span>PARA TUS PROYECTOS</span></div>
+    </section>
+
+    <div class="marquee" aria-label="Impresión, estampado y personalización"><div class="marquee-track"><span>IDEAS QUE SE HACEN REALIDAD <b>✳</b> IMPRESIÓN Y PERSONALIZACIÓN <b>✳</b> PRODUCTOS CON IDENTIDAD <b>✳</b> IDEAS QUE SE HACEN REALIDAD <b>✳</b> IMPRESIÓN Y PERSONALIZACIÓN <b>✳</b> PRODUCTOS CON IDENTIDAD <b>✳</b></span></div></div>
+
+    <section class="section catalog-section section-anchor" id="catalogo">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="eyebrow">01 / CATÁLOGO</span><h2>Un mundo de ideas<br><em>por personalizar.</em></h2></div><p>Explora nuestras categorías y encuentra un punto de partida para tu proyecto. Si tienes una idea diferente, también queremos conocerla.</p></div>
+        <div class="catalog-grid">
+          <article class="catalog-card catalog-card-featured reveal">
+            <div class="catalog-image image-slot carousel">
+              <div class="carousel-track">
+                <img class="carousel-slide is-active" src="images/mousepads/mousepads-anime-graficos.webp" alt="Mousepads personalizados" loading="lazy">
+                <img class="carousel-slide" src="images/mousepads/mousepad-redondo-gel.webp" alt="Mousepad redondo con gel" loading="lazy">
+                <img class="carousel-slide" src="images/mousepads/mousepad-var.webp" alt="Mousepads variados" loading="lazy">
+              </div>
+              <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+              <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+              <span class="image-number">01</span>
+            </div>
+            <div class="catalog-body"><div class="card-kicker">PERSONALIZA TU ESPACIO</div><h3>Mousepads</h3><p>Mousepads cuadrados, rectangulares, redondos y de distintos tamaños, incluidos modelos con reposamuñecas.</p><a class="text-link quote-category" href="#cotizar" data-category="Mousepads">Cotizar esta categoría <span>↗</span></a></div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot carousel">
+              <div class="carousel-track">
+                <img class="carousel-slide is-active" src="images/stickers/sticker-calabaza-halloween.webp" alt="Stickers personalizados" loading="lazy">
+                <img class="carousel-slide" src="images/stickers/stickers-personajes-variados.webp" alt="Stickers personajes variados" loading="lazy">
+		<img class="carousel-slide" src="images/stickers/sticker-luffy.webp" alt="Stickers personajes variados" loading="lazy">
+              </div>
+              <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+              <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+              <span class="image-number">02</span>
+            </div>
+            <div class="catalog-body"><div class="card-kicker">DETALLES CON IDENTIDAD</div><h3>Stickers</h3><p>Stickers impresos y recortados según tu diseño, ideales para personalizar y comunicar.</p><a class="text-link quote-category" href="#cotizar" data-category="Stickers">Cotizar esta categoría <span>↗</span></a></div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot carousel">
+              <div class="carousel-track">
+                <img class="carousel-slide is-active" src="images/medallas/medallas-trofeos.webp" alt="Medallas" loading="lazy">
+		<img class="carousel-slide" src="images/medallas/trofeo-individual.webp" alt="Medallas" loading="lazy" style="width:100%; height:100%; object-fit:contain; background:#f5f5f5;">
+		<img class="carousel-slide" src="images/medallas/trofeos-varios.webp" alt="Medallas" loading="lazy" style="width:100%; height:100%; object-fit:contain; background:#f5f5f5;">
+              </div>
+              <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+              <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+              <span class="image-number">03</span>
+            </div>
+            <div class="catalog-body"><div class="card-kicker">RECONOCE CADA LOGRO</div><h3>Medallas y trofeos</h3><p>Medallas y trofeos deportivos, institucionales, conmemorativas y personalizados.</p><a class="text-link quote-category" href="#cotizar" data-category="Medallas">Cotizar esta categoría <span>↗</span></a></div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot carousel">
+              <div class="carousel-track">
+		<img class="carousel-slide is-active" src="images/placas-trofeos/placa-variadas.webp" alt="Medallas" loading="lazy">
+		<img class="carousel-slide" src="images/placas-trofeos/trofeos.webp" alt="Medallas" loading="lazy">
+		<img class="carousel-slide" src="images/placas-trofeos/placa-policia.webp" alt="Medallas" loading="lazy" style="width:100%; height:100%; object-fit:contain; background:#f5f5f5;">
+              </div>
+              <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+              <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+              <span class="image-number">04</span>
+            </div>
+            <div class="catalog-body"><div class="card-kicker">IDENTIDAD QUE SE DISTINGUE</div><h3>Insignias y placas</h3><p>Insignias metálicas para uniformes, pines personalizados y escudos institucionales.</p><a class="text-link quote-category" href="#cotizar" data-category="Insignias y placas">Cotizar esta categoría <span>↗</span></a></div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot carousel">
+              <div class="carousel-track">
+		<img class="carousel-slide is-active" src="images/estampado-textil/estampado-variado.webp" alt="Estampado textil variado" loading="lazy">
+                <img class="carousel-slide" src="images/estampado-textil/tulas-deportivas.webp" alt="Estampado textil" loading="lazy">
+		<img class="carousel-slide" src="images/estampado-textil/banderas.webp" alt="Estampado banderas" loading="lazy">
+              </div>
+              <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+              <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+              <span class="image-number">05</span>
+            </div>
+            <div class="catalog-body"><div class="card-kicker">VISTE TUS IDEAS</div><h3>Estampado textil</h3><p>Camisetas, buzos, uniformes, gorras, chaquetas y otras prendas personalizadas.</p><a class="text-link quote-category" href="#cotizar" data-category="Estampado textil">Cotizar esta categoría <span>↗</span></a></div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot carousel">
+              <div class="carousel-track">
+                <img class="carousel-slide" src="images/distintivos/mugs2.webp" alt="Productos personalizados" loading="lazy">
+		<img class="carousel-slide is-active" src="images/distintivos/mug-lacia.webp" alt="Productos personalizados" loading="lazy">
+              </div>
+              <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+              <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+              <span class="image-number">06</span>
+            </div>
+            <div class="catalog-body"><div class="card-kicker">DETALLES QUE MARCAN</div><h3>Mugs</h3><p>Mugs personalizados con impresión nítida y duradera, ideales para regalos, marcas, eventos y detalles.</p><a class="text-link quote-category" href="#cotizar" data-category="Mugs">Cotizar esta categoría <span>↗</span></a></div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot carousel">
+              <div class="carousel-track">
+                <img class="carousel-slide" src="images/cintas-carne/cintas-variadas.webp" alt="Cintas para carné" loading="lazy" style="width:100%; height:100%; object-fit:contain; background:#f5f5f5;">
+                <img class="carousel-slide" src="images/cintas-carne/cinta-lacia.webp" alt="Cinta Lacia Puntocom" loading="lazy" style="width:100%; height:100%; object-fit:contain; background:#f5f5f5;">
+              	<img class="carousel-slide is-active" src="images/cintas-carne/cinta-horizontal-lacia.webp" alt="Cinta Lacia Puntocom" loading="lazy">
+		</div>
+              <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+              <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+              <span class="image-number">07</span>
+            </div>
+            <div class="catalog-body"><div class="card-kicker">DETALLES QUE IDENTIFICAN</div><h3>Cintas para carné</h3><p>Cintas sencillas, personalizadas, sublimadas y con diferentes accesorios.</p><a class="text-link quote-category" href="#cotizar" data-category="Cintas para carné">Cotizar esta categoría <span>↗</span></a></div>
+          </article>
+
+          <article class="catalog-card idea-card reveal"><div class="idea-art" aria-hidden="true"><span>¿</span><i>✳</i><b>!</b></div><div class="catalog-body"><div class="card-kicker">TU IDEA TAMBIÉN CUENTA</div><h3>¿Tienes otra idea?</h3><p>Cuéntanos qué quieres crear. Podemos conversar sobre tu proyecto y lo que tienes en mente.</p><a class="text-link quote-category" href="#cotizar" data-category="Otro / Tengo una idea">Cuéntanos tu idea <span>↗</span></a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section section-anchor" id="nosotros"><div class="container about-grid">
+      <div class="about-visual reveal">
+        <div class="about-photo image-slot carousel" data-autoplay="4500">
+          <div class="carousel-track">
+            <img class="carousel-slide is-active" src="images/portada/entrada-lacia.webp" alt="Proceso de impresión y personalización en Lacia Puntocom" loading="lazy">
+            <img class="carousel-slide" src="images/portada/lacia-corner.webp" alt="Sublimación personalizada en Lacia Puntocom" loading="lazy">
+          </div>
+          <button class="carousel-btn prev" type="button" aria-label="Anterior">‹</button>
+          <button class="carousel-btn next" type="button" aria-label="Siguiente">›</button>
+        </div>
+        <div class="about-sticker">TU IDEA<br><strong>ES ÚNICA</strong><span>✳</span></div><span class="about-caption">LACIAPUNTOCOM · BOGOTÁ</span>
+      </div>
+      <div class="about-copy reveal"><span class="eyebrow">02 / SOBRE NOSOTROS</span><h2>Nos mueve lo que<br><em>imaginas.</em></h2><p>En Lacia Puntocom creemos que cada idea merece hacerse realidad. Por eso ofrecemos soluciones de impresión, estampado y personalización para quienes buscan darle identidad a sus marcas, empresas, eventos y proyectos. Nos gusta transformar las ideas de nuestros clientes en productos que conectan, sorprenden y comunican. Acompañamos cada proyecto desde su concepto hasta el resultado final, buscando ofrecer alternativas que se adapten a sus necesidades. ¡Tu idea es el comienzo de algo único!</p><a class="btn btn-dark" href="#cotizar">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a></div>
+    </div></section>
+
+    <section class="section facilities-section section-anchor" id="instalaciones">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="eyebrow">02.5 / ESPACIOS</span>
+            <h2>Nuestras <em>instalaciones.</em></h2>
+          </div>
+          <p>Conoce el taller, los equipos y las áreas donde transformamos cada diseño en un producto terminado.</p>
+        </div>
+
+        <div class="catalog-grid">
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot">
+              <img src="images/instalaciones/impresora-v.webp" alt="Área de impresión digital" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+              <span class="image-number">01</span>
+            </div>
+            <div class="catalog-body">
+              <div class="card-kicker">ESPACIO 01</div>
+              <h3>Área de impresión digital</h3>
+              <p>Equipos de alta definición para lograr colores vivos y acabados nítidos en cada tiraje.</p>
+            </div>
+          </article>
+
+         <article class="catalog-card reveal">
+
+<div class="catalog-image image-slot">
+
+<img src="images/instalaciones/maq-estampado.webp" alt="Zona de estampado y sublimación" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+
+<span class="image-number">02</span>
+
+</div>
+            <div class="catalog-body">
+              <div class="card-kicker">ESPACIO 02</div>
+              <h3>Zona de estampado y sublimación</h3>
+              <p>Planchas térmicas y estaciones especializadas para textiles, mugs y artículos promocionales.</p>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot">
+              <img src="images/instalaciones/maqs-plotter.webp" alt="Taller de corte y troquelado" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+              <span class="image-number">03</span>
+            </div>
+            <div class="catalog-body">
+              <div class="card-kicker">ESPACIO 03</div>
+              <h3>Corte y troquelado</h3>
+              <p>Precisión en el acabado de stickers, mousepads y piezas con formas personalizadas.</p>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot">
+              <img src="images/instalaciones/maq-tabla-estampado.webp" alt="Mesa de ensamble y acabados" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+              <span class="image-number">04</span>
+            </div>
+            <div class="catalog-body">
+              <div class="card-kicker">ESPACIO 04</div>
+              <h3>Ensamble y terminados</h3>
+              <p>Armado cuidadoso de cintas para carné, medallas, distintivos y placas conmemorativas.</p>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot">
+              <img src="images/instalaciones/maq-diseño.webp" alt="Control de calidad y empaque" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+              <span class="image-number">05</span>
+            </div>
+            <div class="catalog-body">
+              <div class="card-kicker">ESPACIO 05</div>
+              <h3>Control de calidad</h3>
+              <p>Revisión detalle a detalle antes de empacar para asegurar que cada pedido cumpla lo acordado.</p>
+            </div>
+          </article>
+
+          <article class="catalog-card reveal">
+            <div class="catalog-image image-slot">
+              <img src="images/instalaciones/computadores-lacia.webp" alt="Punto de atención en Bogotá" loading="lazy" style="width:100%; height:100%; object-fit:cover;">
+              <span class="image-number">06</span>
+            </div>
+            <div class="catalog-body">
+              <div class="card-kicker">ESPACIO 06</div>
+              <h3>Punto de atención</h3>
+              <p>Espacio dispuesto para asesorarte en persona y revisar muestras de materiales en Bogotá.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section section-anchor" id="galeria"><div class="container">
+      <div class="section-heading reveal"><div><span class="eyebrow">03 / GALERÍA</span><h2>Ideas que toman<br><em>forma y color.</em></h2></div><p>Te presentamos algunos productos que pueden ser de tu interés.</p></div>
+      <div class="gallery-carousel-wrap">
+        <button class="carousel-btn gallery-nav prev" id="galPrev" type="button" aria-label="Anterior">‹</button>
+        <div class="gallery-grid gallery-track" id="galleryTrack">
+          <button class="gallery-item image-slot" type="button" data-gallery-src="images/galeria/foto-nina.webp" data-gallery-alt="Stickers personalizados"><img src="images/galeria/foto-nina.webp" alt="Stickers personalizados" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+          <button class="gallery-item image-slot" type="button" data-gallery-src="images/galeria/mousepad-navidad.webp" data-gallery-alt="Individuales navidad"><img src="images/galeria/mousepad-navidad.webp" alt="Individuales navidad" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/galeria/foto-nino.webp" data-gallery-alt="Stickers personalizados"><img src="images/galeria/foto-nino.webp" alt="Stickers personalizados" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+          <button class="gallery-item image-slot" type="button" data-gallery-src="images/galeria/mousepad-mapa.webp" data-gallery-alt="Mousepads mapa"><img src="images/galeria/mousepad-mapa.webp" alt="Mousepads mapa" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+          <button class="gallery-item image-slot" type="button" data-gallery-src="images/galeria/mousepad-peq.webp" data-gallery-alt="Mousepads cuadrados"><img src="images/galeria/mousepad-peq.webp" alt="Mousepads cuadrados" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+        <button class="gallery-item image-slot" type="button" data-gallery-src="images/cintas-carne/cinta-horizontal-lacia.webp" data-gallery-alt="Cintas"><img src="images/cintas-carne/cinta-horizontal-lacia.webp" alt="Cintas" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/cintas-carne/cintas-variadas.webp" data-gallery-alt="Cintas"><img src="images/cintas-carne/cintas-variadas.webp" alt="Cintas" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/cintas-carne/cinta-lacia.webp" data-gallery-alt="Cintas"><img src="images/cintas-carne/cinta-lacia.webp" alt="Cintas" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/distintivos/mug-lacia.webp" data-gallery-alt="Mugs"><img src="images/distintivos/mug-lacia.webp" alt="Mugs" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/distintivos/mugs2.webp" data-gallery-alt="Mugs"><img src="images/distintivos/mugs2.webp" alt="Mugs" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/estampado-textil/banderas.webp" data-gallery-alt="Banderas"><img src="images/estampado-textil/banderas.webp" alt="Banderas" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/estampado-textil/estampado-variado.webp" data-gallery-alt="Estampados"><img src="images/estampado-textil/estampado-variado.webp" alt="Estampados" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/medallas/medallas-trofeos.webp" data-gallery-alt="Medallas y trofeos"><img src="images/medallas/medallas-trofeos.webp" alt="Medallas y trofeos" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/medallas/trofeo-individual.webp" data-gallery-alt="Trofeo"><img src="images/medallas/trofeo-individual.webp" alt="Trofeo" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/medallas/trofeos-varios.webp" data-gallery-alt="Trofeos"><img src="images/medallas/trofeos-varios.webp" alt="Trofeos" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/mousepads/mousepad-redondo-gel.webp" data-gallery-alt="Mousepad"><img src="images/mousepads/mousepad-redondo-gel.webp" alt="Mousepad" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/mousepads/mousepads-anime-graficos.webp" data-gallery-alt="Mousepads"><img src="images/mousepads/mousepads-anime-graficos.webp" alt="Mousepads" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/mousepads/mousepad-var.webp" data-gallery-alt="Mousepads"><img src="images/mousepads/mousepad-var.webp" alt="Mousepads" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/placas-trofeos/placa-policia.webp" data-gallery-alt="Placa"><img src="images/placas-trofeos/placa-policia.webp" alt="Placa" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/placas-trofeos/placa-variadas.webp" data-gallery-alt="Placas"><img src="images/placas-trofeos/placa-variadas.webp" alt="Placas" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/placas-trofeos/trofeos.webp" data-gallery-alt="Trofeos"><img src="images/placas-trofeos/trofeos.webp" alt="Trofeos" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/portada/portada-rosa.webp" data-gallery-alt=""><img src="images/portada/portada-rosa.webp" alt="" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/portada/mousepad-avatar.webp" data-gallery-alt=""><img src="images/portada/mousepad-avatar.webp" alt="" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>	
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/stickers/stickers-personajes-variados.webp" data-gallery-alt="Sticker"><img src="images/stickers/stickers-personajes-variados.webp" alt="Sticker" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/stickers/sticker-luffy.webp" data-gallery-alt="Sticker"><img src="images/stickers/sticker-luffy.webp" alt="Sticker" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	<button class="gallery-item image-slot" type="button" data-gallery-src="images/stickers/sticker-calabaza-halloween.webp" data-gallery-alt="Sticker"><img src="images/stickers/sticker-calabaza-halloween.webp" alt="Sticker" loading="lazy"><span class="gallery-overlay">Ver imagen ↗</span></button>
+	</div>
+        <button class="carousel-btn gallery-nav next" id="galNext" type="button" aria-label="Siguiente">›</button>
+      </div>
+      <p class="gallery-note"><span>✳</span> Haz clic sobre cualquier fotografía para verla ampliada.</p>
+    </div></section>
+
+    <section class="quote-section section-anchor" id="cotizar"><div class="container quote-layout">
+      <div class="quote-intro reveal"><span class="eyebrow">04 / COTIZACIONES</span><h2>Tu próximo proyecto<br>empieza con <em>un mensaje.</em></h2><p>Cuéntanos lo que tienes en mente. Completa los pasos y revisa la información antes de enviarla por WhatsApp.</p><div class="quote-contact-note"><span class="whatsapp-symbol">✆</span><div><b>¿Prefieres hablar directamente?</b><a href="https://wa.me/573162854493" target="_blank" rel="noopener noreferrer">+57 316 285 4493 ↗</a></div></div><div class="quote-decoration" aria-hidden="true">✳</div></div>
+      <div class="quote-card reveal">
+        <div class="form-top"><div><span class="form-kicker">SOLICITUD DE COTIZACIÓN</span><h3>Cuéntanos tu idea</h3></div><span class="step-count" id="stepCount">01 <i>/ 04</i></span></div>
+        <div class="progress-track" aria-label="Progreso del formulario"><span class="progress-fill" id="progressFill"></span></div>
+        <form id="quoteForm" novalidate>
+          <section class="form-step is-active" data-step="0" aria-labelledby="stepTitle0"><div class="step-heading"><span>PASO 01</span><h4 id="stepTitle0">Primero, tus datos</h4><p>¿Con quién tenemos el gusto?</p></div>
+            <div class="field-grid"><label class="field field-full">Nombre completo <span>*</span><input name="nombre" type="text" autocomplete="name" required maxlength="100" placeholder="Tu nombre"></label><label class="field">Teléfono o WhatsApp <span>*</span><input name="telefono" type="tel" autocomplete="tel" required maxlength="30" placeholder="Tu número de contacto"></label><label class="field">Correo electrónico <small>Opcional</small><input name="correo" type="email" autocomplete="email" maxlength="120" placeholder="nombre@correo.com"></label><label class="field field-full">Empresa o negocio <small>Opcional</small><input name="empresa" type="text" autocomplete="organization" maxlength="120" placeholder="Nombre de tu empresa"></label></div>
+          </section>
+          <section class="form-step" data-step="1" aria-labelledby="stepTitle1" hidden><div class="step-heading"><span>PASO 02</span><h4 id="stepTitle1">¿Qué quieres cotizar?</h4><p>Selecciona la categoría que más se acerca a tu idea.</p></div>
+            <div class="category-options" id="categoryOptions"><label class="category-option"><input type="radio" name="categoria" value="Mousepads"><span>Mousepads</span></label><label class="category-option"><input type="radio" name="categoria" value="Stickers"><span>Stickers</span></label><label class="category-option"><input type="radio" name="categoria" value="Medallas"><span>Medallas</span></label><label class="category-option"><input type="radio" name="categoria" value="Estampillas y distintivos"><span>Estampillas y distintivos</span></label><label class="category-option"><input type="radio" name="categoria" value="Estampado textil"><span>Estampado textil</span></label><label class="category-option"><input type="radio" name="categoria" value="Placas y trofeos"><span>Placas y trofeos</span></label><label class="category-option"><input type="radio" name="categoria" value="Cintas para carné"><span>Cintas para carné</span></label><label class="category-option"><input type="radio" name="categoria" value="Otro / Tengo una idea"><span>Otro / Tengo una idea</span></label></div>
+          </section>
+          <section class="form-step" data-step="2" aria-labelledby="stepTitle2" hidden><div class="step-heading"><span>PASO 03</span><h4 id="stepTitle2">Algunos detalles</h4><p>Comparte lo que ya sabes. Los campos son opcionales.</p></div><div id="dynamicFields" class="field-grid"></div></section>
+          <section class="form-step" data-step="3" aria-labelledby="stepTitle3" hidden><div class="step-heading"><span>PASO 04</span><h4 id="stepTitle3">Revisa tu solicitud</h4><p>Verifica los datos antes de abrir WhatsApp.</p></div><div class="review-summary" id="reviewSummary"></div><label class="consent-check"><input type="checkbox" id="dataConsent" required><span>Autorizo el uso de los datos que proporciono para que Lacia Puntocom pueda contactarme y atender esta solicitud. <b>*</b></span></label><p class="privacy-note">Esta página no guarda ni envía tus datos a un servidor. Al continuar, se abrirá WhatsApp con el mensaje preparado para que tú decidas enviarlo.</p></section>
+          <p class="form-error" id="formError" role="alert" aria-live="polite"></p>
+          <div class="form-actions"><button class="btn btn-quiet" id="prevStep" type="button" hidden>← Anterior</button><span class="form-action-spacer"></span><button class="btn btn-primary" id="nextStep" type="button">Continuar <span aria-hidden="true">→</span></button><button class="btn btn-primary" id="sendQuote" type="submit" hidden>Preparar WhatsApp <span aria-hidden="true">↗</span></button></div>
+        </form>
+      </div>
+    </div></section>
+<section class="contact-section section-anchor" id="contacto">
+      <div class="container">
+        <div class="section-heading contact-heading reveal">
+          <div>
+            <span class="eyebrow">05 / CONTACTO</span>
+            <h2>Hagamos que tu idea<br><em>se ponga en marcha.</em></h2>
+          </div>
+          <p>Estamos en Bogotá. Escríbenos por tus canales de contacto o consulta cómo llegar a nuestro punto de atención.</p>
+        </div>
+
+
+        <div class="contact-grid">
+          <div class="contact-details reveal">
+            <div class="contact-card">
+              <span class="contact-icon">⌖</span>
+              <span>
+                <small>DIRECCIÓN</small>
+                <b>Cl. 10 #27-05 Local 201A</b>
+                <em>Los Mártires, Bogotá, Colombia</em>
+              </span>
+            </div>
+
+            <div class="contact-card">
+  <span class="contact-icon" aria-hidden="true">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+    </svg>
+  </span>
+  <span>
+    <small>ENCUÉNTRANOS EN REDES</small>
+    <b class="social-inline">
+      <a href="https://www.instagram.com/laciapuntocom/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      <a href="https://web.facebook.com/Laciaestampados/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+      <a href="https://www.tiktok.com/@laciapuntocom" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+    </b>
+  </span>
+</div>
+            </div>
+          <div class="map-wrap reveal">
+            <iframe title="Mapa de ubicación de Lacia Puntocom en Bogotá" src="https://www.google.com/maps?q=Laciapuntocom%2C%20Cl.%2010%20%2327-05%20Local%20201A%2C%20Los%20M%C3%A1rtires%2C%20Bogot%C3%A1%2C%20Colombia&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <a class="map-directions" href="https://www.google.com/maps/dir/?api=1&destination=Laciapuntocom%2C%20Cl.%2010%20%2327-05%20Local%20201A%2C%20Los%20M%C3%A1rtires%2C%20Bogot%C3%A1%2C%20Colombia" target="_blank" rel="noopener noreferrer">Cómo llegar <span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="footer-main"><div class="footer-brand"><a class="brand brand-light" href="#inicio"><img class="brand-logo" src="images/portada/logo-transparente.webp" alt="Lacia Puntocom" style="height: 44px; width: auto; object-fit: contain;"><span class="brand-name">LACIAPUNTOCOM<small>IMPRESIÓN Y ESTAMPADO DIGITAL</small></span></a><p>Ideas, impresión y personalización. Creamos productos que ayudan a comunicar lo que quieres expresar.</p></div><div class="footer-col"><h4>Explora</h4><a href="#inicio" data-vista-solo="inicio">Inicio</a><a href="#catalogo" data-vista-solo="catalogo">Catálogo</a><a href="#nosotros" data-vista-solo="nosotros">Sobre nosotros</a><a href="#instalaciones" data-vista-solo="instalaciones">Instalaciones</a><a href="#galeria" data-vista-solo="galeria">Galería</a><a href="#contacto" data-vista-solo="contacto">Contacto</a><a href="#cotizar" data-vista-solo="cotizar">Cotizar</a></div><div class="footer-col"><h4>Contacto</h4><p>Cl. 10 #27-05 Local 201A<br>Los Mártires, Bogotá, Colombia</p><a href="https://wa.me/573162854493" target="_blank" rel="noopener noreferrer">+57 316 285 4493</a><div class="footer-social"><a href="https://www.instagram.com/laciapuntocom/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://web.facebook.com/Laciaestampados/" target="_blank" rel="noopener noreferrer">Facebook</a><a href="https://www.tiktok.com/@laciapuntocom" target="_blank" rel="noopener noreferrer">TikTok</a></div></div></div><div class="footer-bottom"><span>© <span id="year"></span> Lacia Puntocom. Todos los derechos reservados.</span><a href="#arriba">Volver arriba ↑</a></div></div></footer>
+  <a class="whatsapp-float" href="https://wa.me/573162854493?text=Hola%20Lacia%20Puntocom%2C%20quiero%20hacer%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Contactar a Lacia Puntocom por WhatsApp">✆</a>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Vista ampliada de fotografía"><button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar imagen">×</button><img id="lightboxImage" src="" alt=""><p id="lightboxCaption"></p></dialog>
+<div id="image-lightbox" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Vista ampliada de imagen">
+  <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">&times;</button>
+  <figure class="lightbox-content">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+  </figure>
+</div>
+  <script src="js/main.js" defer></script>
+  <script>
+    /* Inicialización directa de carruseles */
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".carousel").forEach((carousel) => {
+        if (carousel.dataset.carouselReady) return;
+        carousel.dataset.carouselReady = "true";
+
+        const slides = carousel.querySelectorAll(".carousel-slide");
+        const prevBtn = carousel.querySelector(".prev");
+        const nextBtn = carousel.querySelector(".next");
+
+        if (slides.length <= 1) {
+          if (prevBtn) prevBtn.style.display = "none";
+          if (nextBtn) nextBtn.style.display = "none";
+          return;
+        }
+
+        let current = 0;
+        const showSlide = (index) => {
+          slides[current].classList.remove("is-active");
+          current = (index + slides.length) % slides.length;
+          slides[current].classList.add("is-active");
+        };
+
+        prevBtn?.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          showSlide(current - 1);
+        });
+
+        nextBtn?.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          showSlide(current + 1);
+        });
+
+        const interval = parseInt(carousel.dataset.autoplay, 10);
+        if (interval) {
+          setInterval(() => showSlide(current + 1), interval);
+        }
+      });
+
+      const galleryTrack = document.getElementById("galleryTrack");
+      const galPrev = document.getElementById("galPrev");
+      const galNext = document.getElementById("galNext");
+      if (galleryTrack && galPrev && galNext && !galleryTrack.dataset.carouselReady) {
+        galleryTrack.dataset.carouselReady = "true";
+        galPrev.addEventListener("click", () => galleryTrack.scrollBy({ left: -340, behavior: "smooth" }));
+        galNext.addEventListener("click", () => galleryTrack.scrollBy({ left: 340, behavior: "smooth" }));
+      }
+    });
+  </script>
+  <script>
+    (function () {
+      const vistasValidas = ["inicio", "catalogo", "nosotros", "instalaciones", "galeria", "contacto", "cotizar"];
+      const body = document.body;
+      body.classList.add("vista-por-seccion");
+
+      const marcarEnlaceActivo = (destinoId) => {
+        document.querySelectorAll("header .nav-links a[href^='#'], .footer-col a[href^='#']").forEach((a) => {
+          const idEnlace = a.dataset.vistaSolo || a.getAttribute("href").slice(1);
+          const esActivo = idEnlace === destinoId;
+          a.classList.toggle("is-active-view", esActivo);
+          if (esActivo) {
+            a.setAttribute("aria-current", "page");
+          } else {
+            a.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      const revelarElementos = (seccion) => {
+        if (!seccion) return;
+        seccion.querySelectorAll(".reveal").forEach((el) => {
+          el.classList.add("is-visible");
+        });
+      };
+
+      const activarVista = (vistaId, hacerScroll = true) => {
+        const destinoId = vistasValidas.includes(vistaId) ? vistaId : "inicio";
+        body.setAttribute("data-vista", destinoId);
+        marcarEnlaceActivo(destinoId);
+
+        const seccionActiva = document.getElementById(destinoId);
+        revelarElementos(seccionActiva);
+
+        if (hacerScroll && seccionActiva) {
+          seccionActiva.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      };
+
+      // Al cargar la página: muestra solo "inicio" (a menos que la URL traiga un #hash válido)
+      const hashInicial = window.location.hash.replace("#", "");
+      activarVista(vistasValidas.includes(hashInicial) ? hashInicial : "inicio", false);
+
+      // Clic en menú, logo, footer y botones internos de sección
+      document.addEventListener("click", (e) => {
+        const enlace = e.target.closest("a[href^='#']");
+        if (!enlace) return;
+
+        const targetId = enlace.dataset.vistaSolo || enlace.getAttribute("href").slice(1);
+        if (!vistasValidas.includes(targetId)) return;
+
+        e.preventDefault();
+        activarVista(targetId, true);
+        history.replaceState(null, "", `#${targetId}`);
+
+        const navLinks = document.getElementById("navLinks");
+        const menuToggle = document.getElementById("menuToggle");
+        if (navLinks && navLinks.classList.contains("is-open")) {
+          navLinks.classList.remove("is-open");
+          menuToggle?.setAttribute("aria-expanded", "false");
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
